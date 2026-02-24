@@ -324,9 +324,11 @@ td {
     white-space: nowrap;
 }
 
+/* this was funny but it looks so ugly */
 .wheel-item:nth-child(1) { transform: rotate(0deg) translate(100px) rotate(0deg); }
 .wheel-item:nth-child(2) { transform: rotate(120deg) translate(100px) rotate(-120deg); }
 .wheel-item:nth-child(3) { transform: rotate(240deg) translate(100px) rotate(-240deg); }
+
 
 
 /* Gallery Grid - Full Width */
