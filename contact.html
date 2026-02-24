@@ -9,9 +9,20 @@
 </head>
 <body>
     <nav aria-label="Primary">
-        <ul>
+        <a href="index.html" class="nav-logo" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none;">ITALIA</a>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#activities">Activities</a></li>
+            <li><a href="index.html#locations">Locations</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
     </nav>
     
@@ -52,5 +63,28 @@
             </form>
         </div>
     </main>
+
+    <script>
+        // Mobile Menu Logic
+        const nav = document.querySelector('nav');
+        const hamburger = document.getElementById('hamburger-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            // Toggle blend mode handling class on nav
+            nav.classList.toggle('menu-active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                nav.classList.remove('menu-active');
+            });
+        });
+    </script>
 </body>
 </html>

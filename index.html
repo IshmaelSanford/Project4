@@ -26,7 +26,15 @@
 
     <!-- Navigation Area -->
     <nav>
-        <ul>
+        <a href="index.html" class="nav-logo" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none;">ITALIA</a>
+        
+        <div class="hamburger" id="hamburger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
             <li><a href="#intro">About</a></li>
             <li><a href="#activities">Activities</a></li>
             <li><a href="#locations">Locations</a></li>
@@ -268,6 +276,27 @@
                 observer.observe(img);
             });
         }
+
+        // Mobile Menu Logic
+        const nav = document.querySelector('nav');
+        const hamburger = document.getElementById('hamburger-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            // Toggle blend mode handling class on nav
+            nav.classList.toggle('menu-active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                nav.classList.remove('menu-active');
+            });
+        });
 
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initObserver);
