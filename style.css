@@ -188,6 +188,7 @@ nav a {
 
 section {
     margin-bottom: 20vh;
+    scroll-margin-top: 15vh; /* Adjust scroll position to account for fixed nav */
 }
 
 /* Image Reveal Animation */
